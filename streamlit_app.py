@@ -5,8 +5,8 @@ import numpy as np
 
 st.title('Patrones de consumo en Almería (2015)')
 
-DATE_COLUMN = 'SECTOR/avg(IMPORTE)'
-DATA_URL = ('https://c0a2-35-204-66-47.ngrok.io/api/v1/sectores')
+DATE_COLUMN = 'SECTOR/GASTO TOTAL'
+DATA_URL = ('http://70f5-35-204-66-47.ngrok.io/api/v1/sectores')
 
 @st.cache
 def load_data():
@@ -23,7 +23,7 @@ st.subheader('Gasto total por sector')
 data_sectores = load_data()
 st.write(data_sectores)
 #Bar Chart
-st.bar_chart(data_sectores, width=0, height=0, use_container_width=True)
+st.bar_chart(data_sectores[DATE_COLUMN])
 
 '''
 hist_values = np.histogram(data[DATE_COLUMN].dt.hour, bins=24, range=(0,24))[0]
