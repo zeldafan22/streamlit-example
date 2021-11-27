@@ -23,7 +23,7 @@ st.subheader('Gasto total por sector')
 data_sectores = load_data()
 st.write(data_sectores)
 #Bar Chart
-st.bar_chart(data_sectores[DATE_COLUMN])
+st.bar_chart(data_sectores['num_orders'])
 
 '''
 hist_values = np.histogram(data[DATE_COLUMN].dt.hour, bins=24, range=(0,24))[0]
