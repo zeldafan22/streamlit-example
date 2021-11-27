@@ -5,7 +5,7 @@ import numpy as np
 
 st.title('Patrones de consumo en Almería (2015)')
 
-DATE_COLUMN = 'SECTOR/GASTO TOTAL'
+DATE_COLUMN = 'GASTO TOTAL/SECTOR'
 DATA_URL = ('http://70f5-35-204-66-47.ngrok.io/api/v1/sectores')
 
 @st.cache
