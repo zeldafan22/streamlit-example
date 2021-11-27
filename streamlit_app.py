@@ -10,7 +10,7 @@ DATA_URL = ('http://70f5-35-204-66-47.ngrok.io/api/v1/sectores')
 
 @st.cache
 def load_data():
-    data = pd.read_json(DATA_URL)
+    data = pd.read_json(DATA_URL, orient ='index')
     '''
     lowercase = lambda x: str(x).lower()
     data.rename(lowercase, axis='columns', inplace=True)
