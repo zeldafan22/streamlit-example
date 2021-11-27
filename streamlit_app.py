@@ -16,6 +16,7 @@ def load_data():
     data[DATE_COLUMN] = pd.to_datetime(data[DATE_COLUMN])
     return data
     '''
+    return data
 st.subheader('Gasto total por mes')
 data = load_data()
 st.bar_chart(data, width=0, height=0, use_container_width=True)
