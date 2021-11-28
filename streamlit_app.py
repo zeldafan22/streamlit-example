@@ -1,12 +1,17 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
+import requests
 
 
 st.title('Patrones de consumo en Almería (2015)')
 
 DATE_COLUMN = 'GASTO TOTAL/SECTOR'
 DATA_URL = ('http://70f5-35-204-66-47.ngrok.io/api/v1/sectores')
+
+def recoger(url):
+    return requests.get(url)
+    
 
 @st.cache
 def load_data():
@@ -23,7 +28,7 @@ def load_data():
 st.subheader('Gasto total por sector')
 
 data_sectores = load_data()
-st.subheader(DATA_URL)
+st.subheader(recoger(DATA_URL))
 st.write(data_sectores)
 #Bar Chart
 st.bar_chart(data=data_sectores,width=0, heigth=0, use_container_width=False)
