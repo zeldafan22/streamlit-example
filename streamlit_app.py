@@ -85,6 +85,7 @@ data_taltas = load_data_taltas()
 st.write(data_taltas)
 st.vega_lite_chart(data_taltas, {
     'mark': 'bar',
+    'width': 500,
     'encoding' : {
         'y' : {'field': 'DIA'},
         'x' : {'field': 'GASTOS', 'type': 'quantitative'},
