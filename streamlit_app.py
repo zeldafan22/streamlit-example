@@ -10,7 +10,9 @@ DATE_COLUMN = 'GASTO TOTAL/SECTOR'
 DATA_URL = ('http://70f5-35-204-66-47.ngrok.io/api/v1/sectores')
 
 def recoger(url):
-    return requests.get(url)
+    response = requests.get(url)
+    response_json = json.loads(response.text)
+    return response_json
     
 
 @st.cache
