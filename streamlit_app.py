@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import requests
+from altair import *
 import altair as alt
 
 st.title('Patrones de consumo en Almería (2015)')
