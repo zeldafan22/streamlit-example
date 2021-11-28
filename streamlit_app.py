@@ -87,7 +87,7 @@ data_talta = load_data_taltas()
 st.vega_lite_chart(data_talta, {
     'mark': 'bar',
     'encoding' : {
-        'x' : {'field': 'DIA', 'type': 'ordinal', 'timeUnit': 'day'},
+        'x' : {'field': 'DIA', 'type': 'temporal', 'timeUnit': 'day'},
         'y' : {'field': 'GASTOS', 'type': 'quantitative'},
         'color': {'field': 'TMed', 'type': 'quantitative'},
             
