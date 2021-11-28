@@ -16,7 +16,7 @@ def recoger(url):
 
 @st.cache
 def load_data():
-    data = pd.read_json(DATA_URL, orient ='index')
+    data = pd.read_json(recoger(DATA_URL), orient ='index')
     
     '''
     lowercase = lambda x: str(x).lower()
@@ -29,7 +29,7 @@ def load_data():
 st.subheader('Gasto total por sector')
 
 data_sectores = load_data()
-st.subheader(recoger(DATA_URL))
+st.subheader()
 st.write(data_sectores)
 #Bar Chart
 st.bar_chart(data=data_sectores,width=0, heigth=0, use_container_width=False)
