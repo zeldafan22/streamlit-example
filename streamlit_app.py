@@ -54,16 +54,16 @@ def load_data_taltas():
     data = data.iloc[:, ::-1]
     return data
 
-st.subheader('Gasto total por sector')
+st.subheader('Gasto total por sector (€)')
 
 data_sectores = load_data_sectores()
 #st.write(data_sectores)
 #Bar Chart
 st.bar_chart(data_sectores['GASTO TOTAL'], height=500)
 
-st.subheader('Gasto total por mes')
+st.subheader('Gasto total por mes (€)')
 
 data_meses = load_data_meses()
 #st.write(data_sectores)
 #Bar Chart
-st.bar_chart(data_meses['IMPORTES'], height=300)
+st.bar_chart(data_meses['IMPORTES'], height=200)
