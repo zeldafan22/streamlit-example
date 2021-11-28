@@ -2,6 +2,8 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import requests
+from altair import *
+
 
 
 st.title('Patrones de consumo en Almería (2015)')
@@ -33,8 +35,8 @@ def load_data_meses():
 @st.cache
 def load_data_summer():
     datos = recoger((DATA_URL +'/api/v1/summer'))
-    data = pd.DataFrame(datos)
-    data = data.set_index('MES')
+    data = pd.DataFrame(datos, columns=['FRANJA_HORARIA','IMPORTE TOTAL','MES'])
+    data = data.set_index('FRANJA_HORARIA')
     data = data.iloc[:, ::-1]
     return data       
 
@@ -73,4 +75,13 @@ st.subheader('Franjas horarias con más gastos durante el verano (€)')
 data_summer = load_data_summer()
 #st.write(data_sectores)
 #Bar Chart
-st.bar_chart(data_summer)
+chart = Chart(df).mark_bar().encode(
+   column=Column('FRANJA_HORARIA'),
+   x=X('MES'),
+   y=Y('IMPORTE TOTAL'),
+   color=Color('MES', scale=Scale(range=['#EA98D2', '#659CCA']))
+).configure_facet_cell(
+    strokeWidth=0.0,
+)
+
+chart.display()
