@@ -84,4 +84,4 @@ st.bar_chart(data_winter['IMPORTE TOTAL'], height=500)
 
 data_talta = load_data_taltas()
 
-st.barchart(data_talta['GASTOS'])
+st.bar_chart(data_talta['GASTOS'])
