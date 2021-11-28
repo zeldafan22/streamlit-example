@@ -50,7 +50,7 @@ def load_data_winter():
 def load_data_taltas():
     datos = recoger((DATA_URL +'/api/v1/taltas'))
     data = pd.DataFrame(datos)
-    data = data.set_index('SECTOR')
+    data = data.set_index('DIA')
     data = data.iloc[:, ::-1]
     return data
 
@@ -81,3 +81,15 @@ data_winter = load_data_winter()
 #st.write(data_sectores)
 #Bar Chart
 st.bar_chart(data_winter['IMPORTE TOTAL'], height=500)
+
+data_talta = load_data_taltas()
+
+import altair as alt
+
+chart = (
+    alt.Chart(data_talta)
+    .mark_bar()
+    .encode(x="DIA:O", y="GASTOS:Q", color="DIA:N", column="TMed:N")
+)
+
+st.write(chart)
