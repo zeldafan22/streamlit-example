@@ -64,6 +64,9 @@ st.vega_lite_chart(data_sectores, {
         'y' : {'field': 'SECTOR'},
         'x' : {'field': 'GASTO TOTAL', 'type': 'quantitative'},
         'color' : {'field': 'SECTOR'}
+    },
+    'config': {
+        'legend': 'disable'
     }
 })
 
