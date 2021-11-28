@@ -34,7 +34,7 @@ def load_data_meses():
 def load_data_summer():
     datos = recoger((DATA_URL +'/api/v1/summer'))
     data = pd.DataFrame(datos)
-    data = data.set_index('SECTOR')
+    data = data.set_index('MES')
     data = data.iloc[:, ::-1]
     return data       
 
@@ -67,3 +67,10 @@ data_meses = load_data_meses()
 #st.write(data_sectores)
 #Bar Chart
 st.bar_chart(data_meses['IMPORTES'], height=200)
+
+st.subheader('Franjas horarias con más gastos durante el verano (€)')
+
+data_summer = load_data_summer()
+#st.write(data_sectores)
+#Bar Chart
+st.bar_chart(data_summer['IMPORTE TOTAL'], height=200)
