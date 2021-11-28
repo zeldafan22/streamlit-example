@@ -76,7 +76,21 @@ st.subheader('Gasto total por mes (€)')
 data_meses = load_data_meses()
 #st.write(data_sectores)
 #Bar Chart
-st.bar_chart(data_meses['IMPORTES'], height=500)
+st.vega_lite_chart(data_meses, {
+    'mark': {'type': 'bar', 'tooltip': True},
+    'height': 500,
+    'width': 500,
+    'encoding' : {
+        'x' : {'field': 'MES'},
+        'y' : {'field': 'IMPORTES', 'type': 'quantitative'},
+        'color' : {'field': 'MES'}
+    },
+    'config': {
+        'legend': {
+            'disable': True
+        }
+    }
+})
 
 st.subheader('Gastos según franjas horarias durante el verano (€)')
 data_summer = load_data_summer()
