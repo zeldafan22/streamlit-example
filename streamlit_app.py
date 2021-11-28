@@ -54,35 +54,31 @@ def load_data_taltas():
     return data
 
 st.subheader('Gasto total por sector (€)')
-
 data_sectores = load_data_sectores()
 #st.write(data_sectores)
 #Bar Chart
 st.bar_chart(data_sectores['GASTO TOTAL'], height=500)
 
 st.subheader('Gasto total por mes (€)')
-
 data_meses = load_data_meses()
 #st.write(data_sectores)
 #Bar Chart
 st.bar_chart(data_meses['IMPORTES'], height=500)
 
 st.subheader('Gastos según franjas horarias durante el verano (€)')
-
 data_summer = load_data_summer()
 #st.write(data_sectores)
 #Bar Chart
 st.bar_chart(data_summer['IMPORTE TOTAL'], height=500)
 
 st.subheader('Gastos según franjas horarias durante el invierno (€)')
-
 data_winter = load_data_winter()
 #st.write(data_sectores)
 #Bar Chart
 st.bar_chart(data_winter['IMPORTE TOTAL'], height=500)
 
+st.subheader('Gastos en días de temperaturas altas')
 data_taltas = load_data_taltas()
-#st.write(data_taltas)
 st.vega_lite_chart(data_taltas, {
     'mark': 'bar',
     'width': 800,
