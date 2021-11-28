@@ -80,7 +80,7 @@ st.bar_chart(data_winter['IMPORTE TOTAL'], height=500)
 st.subheader('Gastos en días de temperaturas altas')
 data_taltas = load_data_taltas()
 st.vega_lite_chart(data_taltas, {
-    'mark': 'bar',
+    'mark': {'type': 'bar', 'tooltip': True},
     'width': 800,
     'encoding' : {
         'y' : {'field': 'DIA'},
