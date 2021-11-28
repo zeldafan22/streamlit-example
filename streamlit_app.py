@@ -18,7 +18,7 @@ def recoger(url):
 def load_data():
     datos = recoger(DATA_URL)
     data = pd.DataFrame(datos)
-    data = data.iloc[: , 1:]
+    data = data.iloc[:, ::-1]
     
     '''
     lowercase = lambda x: str(x).lower()
