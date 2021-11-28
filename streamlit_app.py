@@ -77,8 +77,9 @@ data_summer = load_data_summer()
 
 
 
-alt.Chart(data_summer).mark_bar().encode(
+summer = alt.Chart(data_summer).mark_bar().encode(
     x='MES',
     y='IMPORTE TOTAL',
     color='FRANJA_HORARIA'
 )
+st.altair_chart(summer, use_container_width=True)
