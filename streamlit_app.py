@@ -125,7 +125,7 @@ st.vega_lite_chart(data_winter, {
         'x' : {'field': 'FRANJA_HORARIA'},
         'y' : {'field': 'IMPORTE TOTAL', 'type': 'quantitative'},
         'color' : {'field': 'FRANJA_HORARIA', 'scale': {
-            'scheme': 'bluegreen'
+            'scheme': 'teals'
         }}
     },
     'config': {
@@ -135,7 +135,7 @@ st.vega_lite_chart(data_winter, {
     }
 })
 
-st.subheader('Gastos en días de temperaturas altas')
+st.subheader('Gastos en días de temperaturas altas (€)')
 data_taltas = load_data_taltas()
 st.vega_lite_chart(data_taltas, {
     'mark': {'type': 'bar', 'tooltip': True},
@@ -143,6 +143,8 @@ st.vega_lite_chart(data_taltas, {
     'encoding' : {
         'y' : {'field': 'DIA'},
         'x' : {'field': 'GASTOS', 'type': 'quantitative'},
-        'color': {'field': 'TMed', 'type': 'quantitative'},
+        'color': {'field': 'TMed', 'type': 'quantitative', 'scale': {
+            'scheme': 'orangered'
+        }},
     }
 })
