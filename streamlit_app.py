@@ -62,12 +62,7 @@ st.vega_lite_chart(data_sectores, {
     'encoding' : {
         'y' : {'field': 'SECTOR'},
         'x' : {'field': 'GASTO TOTAL', 'type': 'quantitative'},
-        'color' : {'field': 'SECTOR'}
-    },
-    'config': {
-        'legend': {
-            'disable': True
-        }
+        'color' : {'field': 'SECTOR', 'legend': null}
     }
 })
 
@@ -80,14 +75,11 @@ st.vega_lite_chart(data_meses, {
     'height': 500,
     'width': 500,
     'encoding' : {
-        'x' : {'field': 'MES', 'timeUnit': 'month'},
+        'x' : {'field': 'MES', 'timeUnit': 'month', 'title': 'MES'},
         'y' : {'field': 'IMPORTES', 'type': 'quantitative'},
-        'color' : {'field': 'MES'}
-    },
-    'config': {
-        'legend': {
-            'disable': True
-        }
+        'color' : {'field': 'MES', 'legend': null, 'scale': {
+            'scheme': 'sinebow'
+        }}
     }
 })
 
