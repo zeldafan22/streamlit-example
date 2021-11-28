@@ -57,7 +57,14 @@ st.subheader('Gasto total por sector (€)')
 data_sectores = load_data_sectores()
 #st.write(data_sectores)
 #Bar Chart
-st.bar_chart(data_sectores['GASTO TOTAL'], height=500)
+st.vega_lite_chart(data_sectores, {
+    'mark': {'type': 'bar', 'tooltip': True},
+    'width': 800,
+    'encoding' : {
+        'y' : {'field': 'SECTOR'},
+        'x' : {'field': 'GASTO TOTAL', 'type': 'quantitative'},
+    }
+})
 
 st.subheader('Gasto total por mes (€)')
 data_meses = load_data_meses()
@@ -86,6 +93,5 @@ st.vega_lite_chart(data_taltas, {
         'y' : {'field': 'DIA'},
         'x' : {'field': 'GASTOS', 'type': 'quantitative'},
         'color': {'field': 'TMed', 'type': 'quantitative'},
-            
     }
 })
