@@ -7,7 +7,7 @@ import requests
 st.title('Patrones de consumo en Almería (2015)')
 
 
-DATA_URL = ('http://cd68-35-237-23-13.ngrok.io')
+DATA_URL = ('http://dbc7-35-229-110-173.ngrok.io')
 
 def recoger(url):
     response = requests.get(url)
@@ -34,7 +34,7 @@ def load_data_meses():
 def load_data_summer():
     datos = recoger((DATA_URL +'/api/v1/summer'))
     data = pd.DataFrame(datos)
-    data = data.set_index('MES')
+    data = data.set_index('FRANJA_HORARIA')
     data = data.iloc[:, ::-1]
     return data       
 
