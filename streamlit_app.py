@@ -89,7 +89,7 @@ import altair as alt
 chart = (
     alt.Chart(data_talta)
     .mark_bar()
-    .encode(x="TMed:Q", y="GASTOS:Q", color="TMed:Q", column="DIA:N")
+    .encode(x="TMed:Q", y="GASTOS:Q", color="TMed:Q", column="DIA:T")
 )
 
 st.write(chart)
