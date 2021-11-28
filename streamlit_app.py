@@ -66,7 +66,9 @@ st.vega_lite_chart(data_sectores, {
         'color' : {'field': 'SECTOR'}
     },
     'config': {
-        'legend': 'disable'
+        'legend': {
+            'disable': True
+        }
     }
 })
 
