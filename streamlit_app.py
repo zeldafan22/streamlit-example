@@ -75,4 +75,4 @@ data_summer = load_data_summer()
 #st.write(data_sectores)
 #Bar Chart
 
-st.bar_chart(data_summer)
+st.bar_chart(data_summer['MES'])
