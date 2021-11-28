@@ -17,7 +17,7 @@ def recoger(url):
 @st.cache
 def load_data():
     datos = recoger(DATA_URL)
-    data = pd.DataFrame(datos, columns=['SECTOR', 'GASTO TOTAL'])
+    data = pd.DataFrame(datos, index='SECTOR')
     #data = data.iloc[:, ::-1]
     return data
 
@@ -26,4 +26,4 @@ st.subheader('Gasto total por sector')
 data_sectores = load_data()
 st.write(data_sectores)
 #Bar Chart
-st.bar_chart(data_sectores)
+st.bar_chart(data_sectores[DATA_COLUMN])
