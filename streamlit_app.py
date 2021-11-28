@@ -63,6 +63,16 @@ st.vega_lite_chart(data_sectores, {
         'color' : {'field': 'SECTOR'}
     },
     'config': {
+        'background': "rgba(0, 0, 0, 0)",
+        'axis': {
+            'labelColor': '#FFF',
+            'titleColor': '#FFF',
+            'gridColor': '#FFF'
+        },
+        'title': {
+            'color': '#FFF',
+            'subtitleColor': '#FFF'
+        },
         'legend': {
             'disable': True
         }
@@ -85,6 +95,16 @@ st.vega_lite_chart(data_meses, {
         }}
     },
     'config': {
+        'background': "rgba(0, 0, 0, 0)",
+        'axis': {
+            'labelColor': '#FFF',
+            'titleColor': '#FFF',
+            'gridColor': '#FFF'
+        },
+        'title': {
+            'color': '#FFF',
+            'subtitleColor': '#FFF'
+        },
         'legend': {
             'disable': True
         }
@@ -107,6 +127,16 @@ st.vega_lite_chart(data_summer, {
         }}
     },
     'config': {
+        'background': "rgba(0, 0, 0, 0)",
+        'axis': {
+            'labelColor': '#FFF',
+            'titleColor': '#FFF',
+            'gridColor': '#FFF'
+        },
+        'title': {
+            'color': '#FFF',
+            'subtitleColor': '#FFF'
+        },
         'legend': {
             'disable': True
         }
@@ -129,6 +159,16 @@ st.vega_lite_chart(data_winter, {
         }}
     },
     'config': {
+        'background': "rgba(0, 0, 0, 0)",
+        'axis': {
+            'labelColor': '#FFF',
+            'titleColor': '#FFF',
+            'gridColor': '#FFF'
+        },
+        'title': {
+            'color': '#FFF',
+            'subtitleColor': '#FFF'
+        },
         'legend': {
             'disable': True
         }
@@ -146,5 +186,21 @@ st.vega_lite_chart(data_taltas, {
         'color': {'field': 'TMed', 'type': 'quantitative', 'scale': {
             'scheme': 'orangered'
         }},
+    },
+    'config': {
+        'background': "rgba(0, 0, 0, 0)",
+        'axis': {
+            'labelColor': '#FFF',
+            'titleColor': '#FFF',
+            'gridColor': '#FFF'
+        },
+        'title': {
+            'color': '#FFF',
+            'subtitleColor': '#FFF'
+        },
+        'legend': {
+            'labelColor': '#FFF',
+            'titleColor': '#FFF'
+        }
     }
 })
