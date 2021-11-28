@@ -26,7 +26,7 @@ data_sectores = load_data()
 st.subheader(type(data_sectores))
 st.write(data_sectores)
 #Bar Chart
-st.bar_chart(data=data_sectores,width=0, heigth=0, use_container_width=False)
+st.bar_chart(data=data_sectores,width=0, heigth=0)
 
 '''
 hist_values = np.histogram(data[DATE_COLUMN].dt.hour, bins=24, range=(0,24))[0]
