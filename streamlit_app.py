@@ -73,7 +73,7 @@ st.subheader('Franjas horarias con más gastos durante el verano (€)')
 data_summer = load_data_summer()
 #st.write(data_sectores)
 #Bar Chart
-st.vega_lite_chart(data_summer, {
+st.vega_lite_chart(data_summer['MES'], {
     'mark' : 'bar',
     'encoding': {
     "x": {"field": "FRANJA_HORARIA"},
