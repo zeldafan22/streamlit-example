@@ -82,4 +82,4 @@ summer = alt.Chart(data_summer).mark_bar().encode(
     y='IMPORTE TOTAL',
     color='FRANJA_HORARIA'
 )
-st.altair_chart(summer, use_container_width=True)
+st.altair_chart(summer)
