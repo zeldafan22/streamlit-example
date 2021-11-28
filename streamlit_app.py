@@ -97,7 +97,7 @@ st.vega_lite_chart(data_meses, {
     'height': 500,
     'width': 700,
     'encoding' : {
-        'x' : {'field': 'MES', 'timeUnit': 'month', 'title': 'MES'},
+        'x' : {'field': 'MES'},
         'y' : {'field': 'IMPORTES', 'type': 'quantitative'},
         'color' : {'field': 'MES', 'scale': {
             'scheme': 'spectral'
@@ -113,6 +113,15 @@ st.vega_lite_chart(data_meses, {
         'title': {
             'color': '#FFF',
             'subtitleColor': '#FFF'
+        },
+        'domain': {
+            'domainColor': "#FFF"
+        },
+        'ticks': {
+            'tickColor': "#FFF"
+        },
+        'grid': {
+            'gridColor': "#FFF"
         },
         'legend': {
             'disable': True
@@ -146,6 +155,15 @@ st.vega_lite_chart(data_summer, {
             'color': '#FFF',
             'subtitleColor': '#FFF'
         },
+        'domain': {
+            'domainColor': "#FFF"
+        },
+        'ticks': {
+            'tickColor': "#FFF"
+        },
+        'grid': {
+            'gridColor': "#FFF"
+        },
         'legend': {
             'disable': True
         }
@@ -178,6 +196,15 @@ st.vega_lite_chart(data_winter, {
             'color': '#FFF',
             'subtitleColor': '#FFF'
         },
+        'domain': {
+            'domainColor': "#FFF"
+        },
+        'ticks': {
+            'tickColor': "#FFF"
+        },
+        'grid': {
+            'gridColor': "#FFF"
+        },
         'legend': {
             'disable': True
         }
@@ -206,6 +233,15 @@ st.vega_lite_chart(data_taltas, {
         'title': {
             'color': '#FFF',
             'subtitleColor': '#FFF'
+        },
+        'domain': {
+            'domainColor': "#FFF"
+        },
+        'ticks': {
+            'tickColor': "#FFF"
+        },
+        'grid': {
+            'gridColor': "#FFF"
         },
         'legend': {
             'labelColor': '#FFF',
