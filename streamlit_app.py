@@ -11,8 +11,7 @@ DATA_URL = ('http://70f5-35-204-66-47.ngrok.io/api/v1/sectores')
 
 def recoger(url):
     response = requests.get(url)
-    response_json = json.loads(response.text())
-    return response_json
+    return response.json()
     
 
 @st.cache
