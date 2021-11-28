@@ -35,7 +35,7 @@ def load_data_meses():
 def load_data_summer():
     datos = recoger((DATA_URL +'/api/v1/summer'))
     data = pd.DataFrame(datos)
-    data = data.set_index('FRANJA_HORARIA')
+    data = data.set_index('MES')
     data = data.iloc[:, ::-1]
     return data       
 
@@ -75,12 +75,4 @@ data_summer = load_data_summer()
 #st.write(data_sectores)
 #Bar Chart
 
-
-
-
-summer = alt.Chart(data_summer).mark_bar().encode(
-    x='FRANJA_HORARIA',
-    y='IMPORTE TOTAL',
-    color='MES'
-)
-st.altair_chart(summer)
+st.bar_chart(sdata_summer)
