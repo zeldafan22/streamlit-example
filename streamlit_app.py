@@ -75,10 +75,10 @@ data_summer = load_data_summer()
 #Bar Chart
 st.vega_lite_chart(data_summer, {
     'mark' : 'bar',
-    "encoding": {
-    "x": {"field": "IMPORTE TOTAL", "type": "quantitative"},
-    "y": {"field": "FRANJA_HORARIA", "type": "quantitative"},
-    "xOffset": {"field": "FRANJA_HORARIA"},
-    "color": {"field": "MES"}
-  },
+    'encoding': {
+    'x': {'field': 'MES', 'type': 'quantitative'},
+    'y': {'field': 'FRANJA_HORARIA', 'type': 'quantitative'},
+    'size': {'field': 'IMPORTE TOTAL', 'type': 'quantitative'},
+    'color': {'field': 'MES', 'type': 'quantitative'},
+    },
 })
