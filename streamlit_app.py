@@ -89,6 +89,7 @@ st.vega_lite_chart(data_talta, {
     'encoding' : {
         'x' : {'field': 'DIA', 'type': 'nominal'},
         'y' : {'field': 'GASTOS', 'type': 'quantitative'},
-        'color': {'field': 'TMed', 'type': 'quantitative'}    
+        'color': {'field': 'TMed', 'type': 'quantitative'},
+        "column": {"field": "DIA", "type": "nominal"},    
     }
 })
