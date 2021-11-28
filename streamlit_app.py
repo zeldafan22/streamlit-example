@@ -16,7 +16,7 @@ def recoger(url):
 
 @st.cache
 def load_data():
-    datos = json.loads(recoger(DATA_URL))
+    datos = recoger(DATA_URL)
     data = pd.DataFrame(datos)
     
     '''
