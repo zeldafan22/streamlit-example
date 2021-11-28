@@ -76,7 +76,7 @@ data_meses = load_data_meses()
 #st.write(data_sectores)
 #Bar Chart
 st.vega_lite_chart(data_meses, {
-    'mark': {'type': 'bar', 'tooltip': True, 'width': '80%'},
+    'mark': {'type': 'bar', 'tooltip': True, 'width': 0.2},
     'height': 500,
     'width': 500,
     'encoding' : {
