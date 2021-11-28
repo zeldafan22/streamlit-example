@@ -77,7 +77,7 @@ data_meses = load_data_meses()
 st.vega_lite_chart(data_meses, {
     'mark': {'type': 'bar', 'tooltip': True, 'width': 20},
     'height': 500,
-    'width': 500,
+    'width': 700,
     'encoding' : {
         'x' : {'field': 'MES', 'timeUnit': 'month', 'title': 'MES'},
         'y' : {'field': 'IMPORTES', 'type': 'quantitative'},
@@ -99,7 +99,7 @@ data_summer = load_data_summer()
 st.vega_lite_chart(data_summer, {
     'mark': {'type': 'bar', 'tooltip': True},
     'height': 500,
-    'width': 500,
+    'width': 700,
     'encoding' : {
         'x' : {'field': 'FRANJA_HORARIA'},
         'y' : {'field': 'IMPORTE TOTAL', 'type': 'quantitative'},
@@ -118,7 +118,23 @@ st.subheader('Gastos según franjas horarias durante el invierno (€)')
 data_winter = load_data_winter()
 #st.write(data_sectores)
 #Bar Chart
-st.bar_chart(data_winter['IMPORTE TOTAL'], height=500)
+st.vega_lite_chart(data_winter, {
+    'mark': {'type': 'bar', 'tooltip': True},
+    'height': 500,
+    'width': 700,
+    'encoding' : {
+        'x' : {'field': 'FRANJA_HORARIA'},
+        'y' : {'field': 'IMPORTE TOTAL', 'type': 'quantitative'},
+        'color' : {'field': 'FRANJA_HORARIA', 'scale': {
+            'scheme': 'goldorange'
+        }}
+    },
+    'config': {
+        'legend': {
+            'disable': True
+        }
+    }
+})
 
 st.subheader('Gastos en días de temperaturas altas')
 data_taltas = load_data_taltas()
