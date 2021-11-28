@@ -82,9 +82,9 @@ data_winter = load_data_winter()
 #Bar Chart
 st.bar_chart(data_winter['IMPORTE TOTAL'], height=500)
 
-data_talta = load_data_taltas()
-
-st.vega_lite_chart(data_talta, {
+data_taltas = load_data_taltas()
+st.write(data_taltas)
+st.vega_lite_chart(data_taltas, {
     'mark': 'bar',
     'encoding' : {
         'x' : {'field': 'DIA'},
