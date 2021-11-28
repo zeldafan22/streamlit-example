@@ -6,7 +6,7 @@ import requests
 
 st.title('Patrones de consumo en Almería (2015)')
 
-DATE_COLUMN = 'GASTO TOTAL/SECTOR'
+DATA_COLUMN = 'GASTO TOTAL/SECTOR'
 DATA_URL = ('http://70f5-35-204-66-47.ngrok.io/api/v1/sectores')
 
 def recoger(url):
@@ -32,7 +32,7 @@ st.subheader('Gasto total por sector')
 data_sectores = load_data()
 st.write(data_sectores)
 #Bar Chart
-st.bar_chart(data_sectores)
+st.bar_chart(data_sectores[DATA_COLUMN])
 
 '''
 hist_values = np.histogram(data[DATE_COLUMN].dt.hour, bins=24, range=(0,24))[0]
