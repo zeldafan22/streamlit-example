@@ -62,7 +62,12 @@ st.vega_lite_chart(data_sectores, {
     'encoding' : {
         'y' : {'field': 'SECTOR'},
         'x' : {'field': 'GASTO TOTAL', 'type': 'quantitative'},
-        'color' : {'field': 'SECTOR', 'legend': null}
+        'color' : {'field': 'SECTOR'}
+    },
+    'config': {
+        'legend': {
+            'disable': True
+        }
     }
 })
 
@@ -80,6 +85,11 @@ st.vega_lite_chart(data_meses, {
         'color' : {'field': 'MES', 'legend': null, 'scale': {
             'scheme': 'sinebow'
         }}
+    },
+    'config': {
+        'legend': {
+            'disable': True
+        }
     }
 })
 
