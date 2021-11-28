@@ -18,7 +18,6 @@ def recoger(url):
 def load_data_sectores():
     datos = recoger((DATA_URL +'/api/v1/sectores'))
     data = pd.DataFrame(datos)
-    data = data.set_index('SECTOR')
     data = data.iloc[:, ::-1]
     return data
 
