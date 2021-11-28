@@ -73,6 +73,9 @@ st.vega_lite_chart(data_sectores, {
             'color': '#FFF',
             'subtitleColor': '#FFF'
         },
+        'domain': {
+            'domainColor': "#FFF"
+        },
         'legend': {
             'disable': True
         }
