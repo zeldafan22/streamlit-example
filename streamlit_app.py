@@ -34,7 +34,7 @@ def load_data_meses():
 def load_data_summer():
     datos = recoger((DATA_URL +'/api/v1/summer'))
     data = pd.DataFrame(datos)
-    data = data.set_index('MES')
+    data = data.set_index('FRANJA_HORARIA')
     data = data.iloc[:, ::-1]
     return data       
 
@@ -73,4 +73,4 @@ st.subheader('Franjas horarias con más gastos durante el verano (€)')
 data_summer = load_data_summer()
 #st.write(data_sectores)
 #Bar Chart
-st.bar_chart(data_summer['FRANJA_HORARIA'], height=200)
+st.bar_chart(data_summer['IMPORTE'], height=200)
