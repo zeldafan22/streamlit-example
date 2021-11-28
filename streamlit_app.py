@@ -125,7 +125,7 @@ st.vega_lite_chart(data_winter, {
         'x' : {'field': 'FRANJA_HORARIA'},
         'y' : {'field': 'IMPORTE TOTAL', 'type': 'quantitative'},
         'color' : {'field': 'FRANJA_HORARIA', 'scale': {
-            'scheme': 'teals'
+            'scheme': 'greenblue'
         }}
     },
     'config': {
