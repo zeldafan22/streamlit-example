@@ -75,7 +75,7 @@ st.subheader('Franjas horarias con más gastos durante el verano (€)')
 data_summer = load_data_summer()
 #st.write(data_sectores)
 #Bar Chart
-chart = Chart(df).mark_bar().encode(
+chart = Chart(data_summer).mark_bar().encode(
    column=Column('FRANJA_HORARIA'),
    x=X('MES'),
    y=Y('IMPORTE TOTAL'),
