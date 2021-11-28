@@ -5,7 +5,6 @@ import requests
 from altair import *
 
 
-
 st.title('Patrones de consumo en Almería (2015)')
 
 
@@ -35,7 +34,7 @@ def load_data_meses():
 @st.cache
 def load_data_summer():
     datos = recoger((DATA_URL +'/api/v1/summer'))
-    data = pd.DataFrame(datos, columns=['FRANJA_HORARIA','IMPORTE TOTAL','MES'])
+    data = pd.DataFrame(datos)
     data = data.set_index('FRANJA_HORARIA')
     data = data.iloc[:, ::-1]
     return data       
@@ -75,6 +74,22 @@ st.subheader('Franjas horarias con más gastos durante el verano (€)')
 data_summer = load_data_summer()
 #st.write(data_sectores)
 #Bar Chart
-c = alt.Chart(data_summer).mark_bar()
 
-st.altair_chart(c, use_container_width=True)
+
+# create dataframe
+df = pd.DataFrame([['Action', 5, 'F'], 
+                   ['Crime', 10, 'F'], 
+                   ['Action', 3, 'M'], 
+                   ['Crime', 9, 'M']], 
+                  columns=['Genre', 'Rating', 'Gender'])
+
+chart = Chart(df).mark_bar().encode(
+   column=Column('Genre'),
+   x=X('Gender'),
+   y=Y('Rating'),
+   color=Color('Gender', scale=Scale(range=['#EA98D2', '#659CCA']))
+).configure_facet_cell(
+    strokeWidth=0.0,
+)
+
+chart.display() # will show the plot
