@@ -84,12 +84,4 @@ st.bar_chart(data_winter['IMPORTE TOTAL'], height=500)
 
 data_talta = load_data_taltas()
 
-import altair as alt
-
-chart = (
-    alt.Chart(data_talta)
-    .mark_bar()
-    .encode(x="DIA:T", y="GASTOS:Q", color="TMed:Q", column="DIA:T")
-)
-
-st.write(chart)
+st.barchart(data_talta['GASTOS'])
