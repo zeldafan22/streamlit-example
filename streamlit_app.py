@@ -25,7 +25,6 @@ def load_data_sectores():
 def load_data_meses():
     datos = recoger((DATA_URL +'/api/v1/meses'))
     data = pd.DataFrame(datos)
-    data = data.set_index('MES')
     data = data.iloc[:, ::-1]
     return data
 
