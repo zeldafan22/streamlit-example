@@ -17,8 +17,9 @@ def recoger(url):
 @st.cache
 def load_data():
     datos = recoger(DATA_URL)
-    data = pd.DataFrame(datos, index='SECTOR')
-    #data = data.iloc[:, ::-1]
+    data = pd.DataFrame(datos)
+    data = data.set_index('SECTOR')
+    data = data.iloc[:, ::-1]
     return data
 
 st.subheader('Gasto total por sector')
