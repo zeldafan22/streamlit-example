@@ -3,8 +3,13 @@ import pandas as pd
 import numpy as np
 import requests
 
-
-st.title('Patrones de consumo en Almería (2015)')
+col1, col2, col3 = st.columns(3)
+with col1:
+    st.write("")
+with col2:
+    st.title('Patrones de consumo en Almería (2015)')
+with col3:
+    st.write("")
 
 
 DATA_URL = ('http://dbc7-35-229-110-173.ngrok.io')
@@ -219,41 +224,47 @@ with colWinter:
         }
     })
 
-st.subheader('Gastos en días de temperaturas altas (€)')
-data_taltas = load_data_taltas()
-st.vega_lite_chart(data_taltas, {
-    'mark': {'type': 'bar', 'tooltip': True},
-    'width': 800,
-    'encoding' : {
-        'y' : {'field': 'DIA'},
-        'x' : {'field': 'GASTOS', 'type': 'quantitative'},
-        'color': {'field': 'TMed', 'type': 'quantitative', 'scale': {
-            'scheme': 'orangered'
-        }},
-    },
-    'config': {
-        'background': "rgba(0, 0, 0, 0)",
-        'axis': {
-            'labelColor': '#FFF',
-            'titleColor': '#FFF',
-            'gridColor': '#FFF'
+col4, colTemp, col6 = st.columns(3)
+with col4:
+    st.write("")
+with colTemp:
+    st.subheader('Gastos en días de temperaturas altas (€)')
+    data_taltas = load_data_taltas()
+    st.vega_lite_chart(data_taltas, {
+        'mark': {'type': 'bar', 'tooltip': True},
+        'width': 800,
+        'encoding' : {
+            'y' : {'field': 'DIA'},
+            'x' : {'field': 'GASTOS', 'type': 'quantitative'},
+            'color': {'field': 'TMed', 'type': 'quantitative', 'scale': {
+                'scheme': 'orangered'
+            }},
         },
-        'title': {
-            'color': '#FFF',
-            'subtitleColor': '#FFF'
-        },
-        'domain': {
-            'domainColor': "#FFF"
-        },
-        'ticks': {
-            'tickColor': "#FFF"
-        },
-        'grid': {
-            'gridColor': "#FFF"
-        },
-        'legend': {
-            'labelColor': '#FFF',
-            'titleColor': '#FFF'
+        'config': {
+            'background': "rgba(0, 0, 0, 0)",
+            'axis': {
+                'labelColor': '#FFF',
+                'titleColor': '#FFF',
+                'gridColor': '#FFF'
+            },
+            'title': {
+                'color': '#FFF',
+                'subtitleColor': '#FFF'
+            },
+            'domain': {
+                'domainColor': "#FFF"
+            },
+            'ticks': {
+                'tickColor': "#FFF"
+            },
+            'grid': {
+                'gridColor': "#FFF"
+            },
+            'legend': {
+                'labelColor': '#FFF',
+                'titleColor': '#FFF'
+            }
         }
-    }
-})
+    })
+with col6:
+    st.write("")
