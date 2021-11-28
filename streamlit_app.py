@@ -7,7 +7,7 @@ import requests
 st.title('Patrones de consumo en Almería (2015)')
 
 DATA_COLUMN = 'GASTO TOTAL'
-DATA_URL = ('http://70f5-35-204-66-47.ngrok.io/api/v1/sectores')
+DATA_URL = ('http://cd68-35-237-23-13.ngrok.io')
 
 def recoger(url):
     response = requests.get(url)
@@ -15,8 +15,8 @@ def recoger(url):
     
 
 @st.cache
-def load_data():
-    datos = recoger(DATA_URL)
+def load_data_sectores():
+    datos = recoger((DATA_URL +'/api/v1/sectores'))
     data = pd.DataFrame(datos)
     data = data.set_index('SECTOR')
     data = data.iloc[:, ::-1]
@@ -24,7 +24,7 @@ def load_data():
 
 st.subheader('Gasto total por sector')
 
-data_sectores = load_data()
+data_sectores = load_data_sectores()
 #st.write(data_sectores)
 #Bar Chart
 st.bar_chart(data_sectores[DATA_COLUMN], height=500)
