@@ -50,7 +50,6 @@ def load_data_winter():
 def load_data_taltas():
     datos = recoger((DATA_URL +'/api/v1/taltas'))
     data = pd.DataFrame(datos)
-    data = data.set_index('DIA')
     data = data.iloc[:, ::-1]
     return data
 
