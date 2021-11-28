@@ -16,7 +16,8 @@ def recoger(url):
 
 @st.cache
 def load_data():
-    data = pd.read_json(recoger(DATA_URL), orient ='index')
+    datos = json.loads(recoger(DATA_URL))
+    data = pd.DataFrame(datos)
     
     '''
     lowercase = lambda x: str(x).lower()
