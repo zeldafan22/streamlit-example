@@ -144,7 +144,7 @@ st.vega_lite_chart(data_taltas, {
         'y' : {'field': 'DIA'},
         'x' : {'field': 'GASTOS', 'type': 'quantitative'},
         'color': {'field': 'TMed', 'type': 'quantitative', 'scale': {
-            'scheme': 'orangered'
+            'scheme': 'yelloworangered'
         }},
     }
 })
