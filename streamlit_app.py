@@ -76,7 +76,7 @@ data_summer = load_data_summer()
 st.vega_lite_chart(data_summer['MES'], {
     'mark' : 'bar',
     "encoding": {
-    "x": {"field": "category"},
+    "x": {"field": "category", "type": "quantitative"},
     "y": {"field": "value", "type": "quantitative"},
     "xOffset": {"field": "group"},
     "color": {"field": "group"}
