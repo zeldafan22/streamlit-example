@@ -18,7 +18,7 @@ def recoger(url):
 def load_data_sectores():
     datos = recoger((DATA_URL +'/api/v1/sectores'))
     data = pd.DataFrame(datos)
-    data = data.set_index('GASTO TOTAL')
+    data = data.set_index('SECTOR')
     data = data.iloc[:, ::-1]
     return data
 
@@ -57,7 +57,7 @@ st.subheader('Gasto total por sector (€)')
 data_sectores = load_data_sectores()
 #st.write(data_sectores)
 #Bar Chart
-st.bar_chart(data_sectores['SECTOR'], height=500)
+st.bar_chart(data_sectores['GASTO TOTAL'], height=500)
 
 st.subheader('Gasto total por mes (€)')
 data_meses = load_data_meses()
