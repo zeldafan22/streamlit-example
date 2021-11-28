@@ -66,7 +66,7 @@ st.subheader('Gasto total por mes (€)')
 data_meses = load_data_meses()
 #st.write(data_sectores)
 #Bar Chart
-st.bar_chart(data_meses['IMPORTES'], height=200)
+st.bar_chart(data_meses['IMPORTES'], height=500)
 
 st.subheader('Franjas horarias con más gastos durante el verano (€)')
 
