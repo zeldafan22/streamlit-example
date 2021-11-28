@@ -39,7 +39,6 @@ def load_data_summer():
 def load_data_winter():
     datos = recoger((DATA_URL +'/api/v1/winter'))
     data = pd.DataFrame(datos)
-    data = data.set_index('FRANJA_HORARIA')
     data = data.iloc[:, ::-1]
     return data
 
@@ -126,7 +125,7 @@ st.vega_lite_chart(data_winter, {
         'x' : {'field': 'FRANJA_HORARIA'},
         'y' : {'field': 'IMPORTE TOTAL', 'type': 'quantitative'},
         'color' : {'field': 'FRANJA_HORARIA', 'scale': {
-            'scheme': 'goldorange'
+            'scheme': 'teals'
         }}
     },
     'config': {
