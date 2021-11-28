@@ -59,7 +59,7 @@ data_sectores = load_data_sectores()
 st.vega_lite_chart(data_sectores, {
     'mark': {'type': 'bar', 'tooltip': True},
     'height': 500,
-    'width': 800,
+    'width': 700,
     'encoding' : {
         'y' : {'field': 'SECTOR'},
         'x' : {'field': 'GASTO TOTAL', 'type': 'quantitative'},
