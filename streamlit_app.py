@@ -30,7 +30,6 @@ def load_data():
 st.subheader('Gasto total por sector')
 
 data_sectores = load_data()
-st.subheader()
 st.write(data_sectores)
 #Bar Chart
 st.bar_chart(data=data_sectores,width=0, heigth=0, use_container_width=False)
