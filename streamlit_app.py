@@ -76,6 +76,12 @@ st.vega_lite_chart(data_sectores, {
         'domain': {
             'domainColor': "#FFF"
         },
+        'ticks': {
+            'tickColor': "#FFF"
+        },
+        'grid': {
+            'gridColor': "#FFF"
+        },
         'legend': {
             'disable': True
         }
