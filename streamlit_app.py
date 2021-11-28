@@ -32,7 +32,6 @@ def load_data_meses():
 def load_data_summer():
     datos = recoger((DATA_URL +'/api/v1/summer'))
     data = pd.DataFrame(datos)
-    data = data.set_index('FRANJA_HORARIA')
     data = data.iloc[:, ::-1]
     return data       
 
@@ -97,7 +96,23 @@ st.subheader('Gastos según franjas horarias durante el verano (€)')
 data_summer = load_data_summer()
 #st.write(data_sectores)
 #Bar Chart
-st.bar_chart(data_summer['IMPORTE TOTAL'], height=500)
+st.vega_lite_chart(data_summer, {
+    'mark': {'type': 'bar', 'tooltip': True},
+    'height': 500,
+    'width': 500,
+    'encoding' : {
+        'x' : {'field': 'FRANJA_HORARIA'},
+        'y' : {'field': 'IMPORTE TOTAL', 'type': 'quantitative'},
+        'color' : {'field': 'FRANJA_HORARIA', 'scale': {
+            'scheme': 'goldorange'
+        }}
+    },
+    'config': {
+        'legend': {
+            'disable': True
+        }
+    }
+})
 
 st.subheader('Gastos según franjas horarias durante el invierno (€)')
 data_winter = load_data_winter()
