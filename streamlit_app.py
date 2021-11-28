@@ -80,7 +80,7 @@ st.vega_lite_chart(data_meses, {
     'height': 500,
     'width': 500,
     'encoding' : {
-        'x' : {'field': 'MES'},
+        'x' : {'field': 'MES', 'timeUnit': 'month'},
         'y' : {'field': 'IMPORTES', 'type': 'quantitative'},
         'color' : {'field': 'MES'}
     },
