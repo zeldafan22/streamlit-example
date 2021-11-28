@@ -78,7 +78,7 @@ st.vega_lite_chart(data_summer, {
     'encoding': {
     'x': {'field': 'MES', 'type': 'quantitative'},
     'y': {'field': 'IMPORTE TOTAL', 'type': 'quantitative'},
-    'size': {'field': 'FRANJA_HORARIA', 'type': 'quantitative'},
-    'color': {'field': 'FRANJA_HORARIA', 'type': 'quantitative'},
+    'size': {'field': 'FRANJA_HORARIA'},
+    'color': {'field': 'FRANJA_HORARIA'},
     },
 })
