@@ -71,7 +71,6 @@ with colSectores:
             'color' : {'field': 'SECTOR'}
         },
         'config': {
-            'background': "rgba(0, 0, 0, 0)",
             'legend': {
                 'disable': True
             }
