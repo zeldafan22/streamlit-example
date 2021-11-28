@@ -86,8 +86,8 @@ st.write(data_taltas)
 st.vega_lite_chart(data_taltas, {
     'mark': 'bar',
     'encoding' : {
-        'x' : {'field': 'DIA'},
-        'y' : {'field': 'GASTOS', 'type': 'quantitative'},
+        'y' : {'field': 'DIA'},
+        'x' : {'field': 'GASTOS', 'type': 'quantitative'},
         'color': {'field': 'TMed', 'type': 'quantitative'},
             
     }
