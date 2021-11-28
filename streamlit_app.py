@@ -49,85 +49,89 @@ def load_data_taltas():
     data = data.iloc[:, ::-1]
     return data
 
-st.subheader('Gasto total por sector (€)')
-data_sectores = load_data_sectores()
-#st.write(data_sectores)
-#Bar Chart
-st.vega_lite_chart(data_sectores, {
-    'mark': {'type': 'bar', 'tooltip': True},
-    'height': 500,
-    'width': 700,
-    'encoding' : {
-        'y' : {'field': 'SECTOR'},
-        'x' : {'field': 'GASTO TOTAL', 'type': 'quantitative'},
-        'color' : {'field': 'SECTOR'}
-    },
-    'config': {
-        'background': "rgba(0, 0, 0, 0)",
-        'axis': {
-            'labelColor': '#FFF',
-            'titleColor': '#FFF',
-            'gridColor': '#FFF'
-        },
-        'title': {
-            'color': '#FFF',
-            'subtitleColor': '#FFF'
-        },
-        'domain': {
-            'domainColor': "#FFF"
-        },
-        'ticks': {
-            'tickColor': "#FFF"
-        },
-        'grid': {
-            'gridColor': "#FFF"
-        },
-        'legend': {
-            'disable': True
-        }
-    }
-})
+colSectores, colMeses = st.columns(2)
 
-st.subheader('Gasto total por mes (€)')
-data_meses = load_data_meses()
-#st.write(data_sectores)
-#Bar Chart
-st.vega_lite_chart(data_meses, {
-    'mark': {'type': 'bar', 'tooltip': True, 'width': 20},
-    'height': 500,
-    'width': 700,
-    'encoding' : {
-        'x' : {'field': 'MES'},
-        'y' : {'field': 'IMPORTES', 'type': 'quantitative'},
-        'color' : {'field': 'MES', 'scale': {
-            'scheme': 'spectral'
-        }}
-    },
-    'config': {
-        'background': "rgba(0, 0, 0, 0)",
-        'axis': {
-            'labelColor': '#FFF',
-            'titleColor': '#FFF',
-            'gridColor': '#FFF'
+with colSectores:
+    st.subheader('Gasto total por sector (€)')
+    data_sectores = load_data_sectores()
+    #st.write(data_sectores)
+    #Bar Chart
+    st.vega_lite_chart(data_sectores, {
+        'mark': {'type': 'bar', 'tooltip': True},
+        'height': 500,
+        'width': 700,
+        'encoding' : {
+            'y' : {'field': 'SECTOR'},
+            'x' : {'field': 'GASTO TOTAL', 'type': 'quantitative'},
+            'color' : {'field': 'SECTOR'}
         },
-        'title': {
-            'color': '#FFF',
-            'subtitleColor': '#FFF'
-        },
-        'domain': {
-            'domainColor': "#FFF"
-        },
-        'ticks': {
-            'tickColor': "#FFF"
-        },
-        'grid': {
-            'gridColor': "#FFF"
-        },
-        'legend': {
-            'disable': True
+        'config': {
+            'background': "rgba(0, 0, 0, 0)",
+            'axis': {
+                'labelColor': '#FFF',
+                'titleColor': '#FFF',
+                'gridColor': '#FFF'
+            },
+            'title': {
+                'color': '#FFF',
+                'subtitleColor': '#FFF'
+            },
+            'domain': {
+                'domainColor': "#FFF"
+            },
+            'ticks': {
+                'tickColor': "#FFF"
+            },
+            'grid': {
+                'gridColor': "#FFF"
+            },
+            'legend': {
+                'disable': True
+            }
         }
-    }
-})
+    })
+
+with colMeses:
+    st.subheader('Gasto total por mes (€)')
+    data_meses = load_data_meses()
+    #st.write(data_sectores)
+    #Bar Chart
+    st.vega_lite_chart(data_meses, {
+        'mark': {'type': 'bar', 'tooltip': True, 'width': 20},
+        'height': 500,
+        'width': 700,
+        'encoding' : {
+            'x' : {'field': 'MES'},
+            'y' : {'field': 'IMPORTES', 'type': 'quantitative'},
+            'color' : {'field': 'MES', 'scale': {
+                'scheme': 'spectral'
+            }}
+        },
+        'config': {
+            'background': "rgba(0, 0, 0, 0)",
+            'axis': {
+                'labelColor': '#FFF',
+                'titleColor': '#FFF',
+                'gridColor': '#FFF'
+            },
+            'title': {
+                'color': '#FFF',
+                'subtitleColor': '#FFF'
+            },
+            'domain': {
+                'domainColor': "#FFF"
+            },
+            'ticks': {
+                'tickColor': "#FFF"
+            },
+            'grid': {
+                'gridColor': "#FFF"
+            },
+            'legend': {
+                'disable': True
+            }
+        }
+    })
 
 st.subheader('Gastos según franjas horarias durante el verano (€)')
 data_summer = load_data_summer()
