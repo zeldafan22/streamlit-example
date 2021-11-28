@@ -6,7 +6,7 @@ import requests
 
 st.title('Patrones de consumo en Almería (2015)')
 
-DATA_COLUMN = ['GASTO TOTAL', 'SECTOR']
+DATA_COLUMN = {'GASTO TOTAL', 'SECTOR'}
 DATA_URL = ('http://70f5-35-204-66-47.ngrok.io/api/v1/sectores')
 
 def recoger(url):
