@@ -42,7 +42,7 @@ def load_data_summer():
 def load_data_winter():
     datos = recoger((DATA_URL +'/api/v1/winter'))
     data = pd.DataFrame(datos)
-    data = data.set_index('SECTOR')
+    data = data.set_index('FRANJA_HORARIA')
     data = data.iloc[:, ::-1]
     return data
 
@@ -68,9 +68,16 @@ data_meses = load_data_meses()
 #Bar Chart
 st.bar_chart(data_meses['IMPORTES'], height=500)
 
-st.subheader('Franjas horarias con más gastos durante el verano (€)')
+st.subheader('Gastos según franjas horarias durante el verano (€)')
 
 data_summer = load_data_summer()
 #st.write(data_sectores)
 #Bar Chart
-st.bar_chart(data_summer['IMPRTE TOTAL'], height=500)
+st.bar_chart(data_summer['IMPORTE TOTAL'], height=500)
+
+st.subheader('Gastos según franjas horarias durante el invierno (€)')
+
+data_winter = load_data_winter()
+#st.write(data_sectores)
+#Bar Chart
+st.bar_chart(data_winter['IMPORTE TOTAL'], height=500)
