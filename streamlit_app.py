@@ -75,6 +75,6 @@ st.subheader('Franjas horarias con más gastos durante el verano (€)')
 data_summer = load_data_summer()
 #st.write(data_sectores)
 #Bar Chart
-c = alt.Chart(data_summer).mark_circle().encode(x='FRANJA_HORARIA', y='IMPORTE TOTAL', size='MES', color='MES', tooltip=['FRANJA_HORARIA', 'IMPORTE TOTAL', 'MES'])
+c = alt.Chart(data_summer).mark_circle()
 
 st.altair_chart(c, use_container_width=True)
