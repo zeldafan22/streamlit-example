@@ -2,8 +2,8 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import requests
-from altair import *
-
+import altair as alt
+from vega_datasets import data
 
 st.title('Patrones de consumo en Almería (2015)')
 
@@ -76,20 +76,10 @@ data_summer = load_data_summer()
 #Bar Chart
 
 
-# create dataframe
-df = pd.DataFrame([['Action', 5, 'F'], 
-                   ['Crime', 10, 'F'], 
-                   ['Action', 3, 'M'], 
-                   ['Crime', 9, 'M']], 
-                  columns=['Genre', 'Rating', 'Gender'])
+source = data.barley()
 
-chart = Chart(df).mark_bar().encode(
-   column=Column('Genre'),
-   x=X('Gender'),
-   y=Y('Rating'),
-   color=Color('Gender', scale=Scale(range=['#EA98D2', '#659CCA']))
-).configure_facet_cell(
-    strokeWidth=0.0,
+alt.Chart(source).mark_bar().encode(
+    x='variety',
+    y='sum(yield)',
+    color='site'
 )
-
-chart.display() # will show the plot
