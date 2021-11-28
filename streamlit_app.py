@@ -11,6 +11,7 @@ DATA_URL = ('http://70f5-35-204-66-47.ngrok.io/api/v1/sectores')
 @st.cache
 def load_data():
     data = pd.read_json(DATA_URL, orient ='index')
+    
     '''
     lowercase = lambda x: str(x).lower()
     data.rename(lowercase, axis='columns', inplace=True)
@@ -20,6 +21,7 @@ def load_data():
     return data
 
 st.subheader('Gasto total por sector')
+st.subheader(type(data))
 data_sectores = load_data()
 st.write(data_sectores)
 #Bar Chart
