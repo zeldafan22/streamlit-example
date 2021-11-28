@@ -3,7 +3,7 @@ import pandas as pd
 import numpy as np
 import requests
 import altair as alt
-from vega_datasets import data
+from vega_datasets import data2
 
 st.title('Patrones de consumo en Almería (2015)')
 
@@ -76,7 +76,7 @@ data_summer = load_data_summer()
 #Bar Chart
 
 
-source = data.barley()
+source = data2.barley()
 
 alt.Chart(source).mark_bar().encode(
     x='variety',
