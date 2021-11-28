@@ -133,87 +133,91 @@ with colMeses:
         }
     })
 
-st.subheader('Gastos según franjas horarias durante el verano (€)')
-data_summer = load_data_summer()
-#st.write(data_sectores)
-#Bar Chart
-st.vega_lite_chart(data_summer, {
-    'mark': {'type': 'bar', 'tooltip': True},
-    'height': 500,
-    'width': 700,
-    'encoding' : {
-        'x' : {'field': 'FRANJA_HORARIA'},
-        'y' : {'field': 'IMPORTE TOTAL', 'type': 'quantitative'},
-        'color' : {'field': 'FRANJA_HORARIA', 'scale': {
-            'scheme': 'goldorange'
-        }}
-    },
-    'config': {
-        'background': "rgba(0, 0, 0, 0)",
-        'axis': {
-            'labelColor': '#FFF',
-            'titleColor': '#FFF',
-            'gridColor': '#FFF'
-        },
-        'title': {
-            'color': '#FFF',
-            'subtitleColor': '#FFF'
-        },
-        'domain': {
-            'domainColor': "#FFF"
-        },
-        'ticks': {
-            'tickColor': "#FFF"
-        },
-        'grid': {
-            'gridColor': "#FFF"
-        },
-        'legend': {
-            'disable': True
-        }
-    }
-})
+colSummer, colWinter = st.columns(2)
 
-st.subheader('Gastos según franjas horarias durante el invierno (€)')
-data_winter = load_data_winter()
-#st.write(data_sectores)
-#Bar Chart
-st.vega_lite_chart(data_winter, {
-    'mark': {'type': 'bar', 'tooltip': True},
-    'height': 500,
-    'width': 700,
-    'encoding' : {
-        'x' : {'field': 'FRANJA_HORARIA'},
-        'y' : {'field': 'IMPORTE TOTAL', 'type': 'quantitative'},
-        'color' : {'field': 'FRANJA_HORARIA', 'scale': {
-            'scheme': 'teals'
-        }}
-    },
-    'config': {
-        'background': "rgba(0, 0, 0, 0)",
-        'axis': {
-            'labelColor': '#FFF',
-            'titleColor': '#FFF',
-            'gridColor': '#FFF'
+with colSummer:
+    st.subheader('Gastos según franjas horarias durante el verano (€)')
+    data_summer = load_data_summer()
+    #st.write(data_sectores)
+    #Bar Chart
+    st.vega_lite_chart(data_summer, {
+        'mark': {'type': 'bar', 'tooltip': True},
+        'height': 500,
+        'width': 700,
+        'encoding' : {
+            'x' : {'field': 'FRANJA_HORARIA'},
+            'y' : {'field': 'IMPORTE TOTAL', 'type': 'quantitative'},
+            'color' : {'field': 'FRANJA_HORARIA', 'scale': {
+                'scheme': 'goldorange'
+            }}
         },
-        'title': {
-            'color': '#FFF',
-            'subtitleColor': '#FFF'
-        },
-        'domain': {
-            'domainColor': "#FFF"
-        },
-        'ticks': {
-            'tickColor': "#FFF"
-        },
-        'grid': {
-            'gridColor': "#FFF"
-        },
-        'legend': {
-            'disable': True
+        'config': {
+            'background': "rgba(0, 0, 0, 0)",
+            'axis': {
+                'labelColor': '#FFF',
+                'titleColor': '#FFF',
+                'gridColor': '#FFF'
+            },
+            'title': {
+                'color': '#FFF',
+                'subtitleColor': '#FFF'
+            },
+            'domain': {
+                'domainColor': "#FFF"
+            },
+            'ticks': {
+                'tickColor': "#FFF"
+            },
+            'grid': {
+                'gridColor': "#FFF"
+            },
+            'legend': {
+                'disable': True
+            }
         }
-    }
-})
+    })
+
+with colWinter:
+    st.subheader('Gastos según franjas horarias durante el invierno (€)')
+    data_winter = load_data_winter()
+    #st.write(data_sectores)
+    #Bar Chart
+    st.vega_lite_chart(data_winter, {
+        'mark': {'type': 'bar', 'tooltip': True},
+        'height': 500,
+        'width': 700,
+        'encoding' : {
+            'x' : {'field': 'FRANJA_HORARIA'},
+            'y' : {'field': 'IMPORTE TOTAL', 'type': 'quantitative'},
+            'color' : {'field': 'FRANJA_HORARIA', 'scale': {
+                'scheme': 'teals'
+            }}
+        },
+        'config': {
+            'background': "rgba(0, 0, 0, 0)",
+            'axis': {
+                'labelColor': '#FFF',
+                'titleColor': '#FFF',
+                'gridColor': '#FFF'
+            },
+            'title': {
+                'color': '#FFF',
+                'subtitleColor': '#FFF'
+            },
+            'domain': {
+                'domainColor': "#FFF"
+            },
+            'ticks': {
+                'tickColor': "#FFF"
+            },
+            'grid': {
+                'gridColor': "#FFF"
+            },
+            'legend': {
+                'disable': True
+            }
+        }
+    })
 
 st.subheader('Gastos en días de temperaturas altas (€)')
 data_taltas = load_data_taltas()
